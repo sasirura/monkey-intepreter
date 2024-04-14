@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	logger := getLogger("/home/sasiruravihansa/personal/lsp/log.txt")
+	logger := getLogger("/home/sasiruravihansa/personal/monkey-intepreter/lsp/log.txt")
 	logger.Println("Hey, I started")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(rpc.Split)
@@ -79,15 +79,32 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 		}
 
 		//Response
-		response := lsp.HoverResponse{
-			Response: lsp.Response{
-				RPC: "2.0",
-				ID:  &request.ID,
-			},
-			Result: lsp.HoverResult{
-				Contents: "Hello, from LSP",
-			},
+		response := state.Hover(request.ID, request.Params.TextDocument.URI, request.Params.Position)
+
+		// Write it back
+		writeResponse(writer, response)
+	case "textDocument/definition":
+		var request lsp.DefinitionRequest
+		if err := json.Unmarshal(contents, &request); err != nil {
+			logger.Printf("textDocument/definition %s", err)
+			return
 		}
+
+		//Response
+		response := state.Definition(request.ID, request.Params.TextDocument.URI, request.Params.Position)
+
+		// Write it back
+		writeResponse(writer, response)
+
+	case "textDocument/codeAction":
+		var request lsp.CodeActionRequest
+		if err := json.Unmarshal(contents, &request); err != nil {
+			logger.Printf("textDocument/codeAction %s", err)
+			return
+		}
+
+		//Response
+		response := state.TextDocumentCodeAction(request.ID, request.Params.TextDocument.URI)
 
 		// Write it back
 		writeResponse(writer, response)

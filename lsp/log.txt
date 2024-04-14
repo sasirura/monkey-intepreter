@@ -1,14 +1,12 @@
-[go-lsp]2024/04/07 17:16:28 main.go:16: Hey, I started
-[go-lsp]2024/04/07 17:16:28 main.go:35: Received message with method: initialize
-[go-lsp]2024/04/07 17:16:28 main.go:44: Connected to: Neovim 0.10.0-dev+gc2433589d
-[go-lsp]2024/04/07 17:16:28 main.go:52: Sent the reply
-[go-lsp]2024/04/07 17:16:28 main.go:35: Received message with method: initialized
-[go-lsp]2024/04/07 17:16:28 main.go:35: Received message with method: textDocument/didOpen
-[go-lsp]2024/04/07 17:16:28 main.go:59: Opened: file:///home/sasiruravihansa/personal/lsp/README.md
-[go-lsp]2024/04/07 17:16:31 main.go:35: Received message with method: textDocument/hover
-[go-lsp]2024/04/07 17:16:31 main.go:35: Received message with method: textDocument/didOpen
-[go-lsp]2024/04/07 17:16:31 main.go:59: Opened: file://
-[go-lsp]2024/04/07 17:16:31 main.go:35: Received message with method: textDocument/didChange
-[go-lsp]2024/04/07 17:16:31 main.go:69: Changed: file://
-[go-lsp]2024/04/07 17:16:32 main.go:35: Received message with method: textDocument/hover
-[go-lsp]2024/04/07 17:16:34 main.go:35: Received message with method: textDocument/didClose
+[go-lsp]2024/04/14 06:56:01 main.go:16: Hey, I started
+[go-lsp]2024/04/14 06:56:01 main.go:35: Received message with method: initialize
+[go-lsp]2024/04/14 06:56:01 main.go:44: Connected to: Neovim 0.10.0-dev+gc2433589d
+[go-lsp]2024/04/14 06:56:01 main.go:52: Sent the reply
+[go-lsp]2024/04/14 06:56:01 main.go:35: Received message with method: initialized
+[go-lsp]2024/04/14 06:56:01 main.go:35: Received message with method: textDocument/didOpen
+[go-lsp]2024/04/14 06:56:01 main.go:59: Opened: file:///home/sasiruravihansa/personal/monkey-intepreter/lsp/README.md
+[go-lsp]2024/04/14 06:56:04 main.go:35: Received message with method: textDocument/codeAction
+[go-lsp]2024/04/14 06:56:09 main.go:35: Received message with method: textDocument/didChange
+[go-lsp]2024/04/14 06:56:09 main.go:69: Changed: file:///home/sasiruravihansa/personal/monkey-intepreter/lsp/README.md
+[go-lsp]2024/04/14 06:56:10 main.go:35: Received message with method: textDocument/didChange
+[go-lsp]2024/04/14 06:56:10 main.go:69: Changed: file:///home/sasiruravihansa/personal/monkey-intepreter/lsp/README.md
